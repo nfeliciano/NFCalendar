@@ -51,7 +51,7 @@ class NFCalendar: UIView, UICollectionViewDelegate, UICollectionViewDataSource, 
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let today = NSDate()
-        return today.numDaysInMonth()
+        return today.numCalendarSlotsInMonth()
     }
     
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
