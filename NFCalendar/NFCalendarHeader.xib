@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Header" id="U6b-Vx-4bR" customClass="NFCalendarHeader" customModule="NFCalendarSample" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sun" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jbD-US-oU4">
+                    <rect key="frame" x="5" y="27" width="36" height="23"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pck-eg-V4B">
+                    <rect key="frame" x="51" y="27" width="36" height="23"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="clZ-xB-rnK">
+                    <rect key="frame" x="188" y="27" width="36" height="23"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7xX-tU-Q9x">
+                    <rect key="frame" x="279" y="27" width="36" height="23"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fri" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FTl-rO-A1R">
+                    <rect key="frame" x="234" y="27" width="35" height="23"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jQu-VC-Qvf">
+                    <rect key="frame" x="143" y="27" width="35" height="23"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eg5-9X-ejk">
+                    <rect key="frame" x="97" y="27" width="36" height="23"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FT0-bS-3df">
+                    <rect key="frame" x="135" y="0.0" width="50" height="24"/>
+                    <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="clZ-xB-rnK" firstAttribute="width" secondItem="jbD-US-oU4" secondAttribute="width" id="0kO-rw-q9a"/>
+                <constraint firstItem="eg5-9X-ejk" firstAttribute="top" secondItem="FT0-bS-3df" secondAttribute="bottom" constant="3" id="1Y1-KK-rZV"/>
+                <constraint firstItem="pck-eg-V4B" firstAttribute="leading" secondItem="jbD-US-oU4" secondAttribute="trailing" constant="10" id="3xh-mc-9GS"/>
+                <constraint firstItem="jQu-VC-Qvf" firstAttribute="centerX" secondItem="U6b-Vx-4bR" secondAttribute="centerX" id="6en-24-zYQ"/>
+                <constraint firstItem="7xX-tU-Q9x" firstAttribute="leading" secondItem="FTl-rO-A1R" secondAttribute="trailing" constant="10" id="7np-cg-C5c"/>
+                <constraint firstItem="7xX-tU-Q9x" firstAttribute="height" secondItem="jbD-US-oU4" secondAttribute="height" id="B8E-ZB-Vuw"/>
+                <constraint firstItem="pck-eg-V4B" firstAttribute="height" secondItem="jbD-US-oU4" secondAttribute="height" id="BgR-VW-7z9"/>
+                <constraint firstAttribute="trailing" secondItem="7xX-tU-Q9x" secondAttribute="trailing" constant="5" id="ETF-mm-XfL"/>
+                <constraint firstAttribute="bottom" secondItem="jQu-VC-Qvf" secondAttribute="bottom" id="Fl8-e8-XVP"/>
+                <constraint firstAttribute="bottom" secondItem="jbD-US-oU4" secondAttribute="bottom" id="MG4-Qe-awW"/>
+                <constraint firstAttribute="bottom" secondItem="pck-eg-V4B" secondAttribute="bottom" id="N4c-eI-itc"/>
+                <constraint firstItem="jQu-VC-Qvf" firstAttribute="leading" secondItem="eg5-9X-ejk" secondAttribute="trailing" constant="10" id="QpB-X4-gPg"/>
+                <constraint firstAttribute="bottom" secondItem="FTl-rO-A1R" secondAttribute="bottom" id="RAR-uh-e6j"/>
+                <constraint firstItem="FT0-bS-3df" firstAttribute="centerX" secondItem="U6b-Vx-4bR" secondAttribute="centerX" id="RoW-rg-lHL"/>
+                <constraint firstItem="eg5-9X-ejk" firstAttribute="leading" secondItem="pck-eg-V4B" secondAttribute="trailing" constant="10" id="Tub-8s-8nP"/>
+                <constraint firstAttribute="bottom" secondItem="7xX-tU-Q9x" secondAttribute="bottom" id="VyB-cS-o2z"/>
+                <constraint firstItem="eg5-9X-ejk" firstAttribute="height" secondItem="jbD-US-oU4" secondAttribute="height" id="bnQ-5K-6Mb"/>
+                <constraint firstItem="FTl-rO-A1R" firstAttribute="height" secondItem="jbD-US-oU4" secondAttribute="height" id="bxS-F6-qwv"/>
+                <constraint firstItem="FT0-bS-3df" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="fPv-Th-pxK"/>
+                <constraint firstItem="eg5-9X-ejk" firstAttribute="leading" secondItem="pck-eg-V4B" secondAttribute="trailing" constant="10" id="gXn-n1-NbM"/>
+                <constraint firstItem="FTl-rO-A1R" firstAttribute="leading" secondItem="clZ-xB-rnK" secondAttribute="trailing" constant="10" id="gj2-zZ-k28"/>
+                <constraint firstItem="clZ-xB-rnK" firstAttribute="height" secondItem="jbD-US-oU4" secondAttribute="height" id="hVX-Dz-KVi"/>
+                <constraint firstItem="FTl-rO-A1R" firstAttribute="width" secondItem="jbD-US-oU4" secondAttribute="width" id="lDW-hU-PMY"/>
+                <constraint firstAttribute="bottom" secondItem="clZ-xB-rnK" secondAttribute="bottom" id="nhk-TW-KDu"/>
+                <constraint firstAttribute="bottom" secondItem="eg5-9X-ejk" secondAttribute="bottom" id="rVX-gr-gQH"/>
+                <constraint firstItem="jQu-VC-Qvf" firstAttribute="height" secondItem="jbD-US-oU4" secondAttribute="height" id="rzh-MN-khN"/>
+                <constraint firstItem="jbD-US-oU4" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="5" id="srB-lA-pND"/>
+                <constraint firstItem="eg5-9X-ejk" firstAttribute="width" secondItem="jbD-US-oU4" secondAttribute="width" id="ulr-55-GpT"/>
+                <constraint firstItem="jQu-VC-Qvf" firstAttribute="width" secondItem="jbD-US-oU4" secondAttribute="width" id="ur1-PB-obA"/>
+                <constraint firstItem="7xX-tU-Q9x" firstAttribute="width" secondItem="jbD-US-oU4" secondAttribute="width" id="vvZ-Nz-YyT"/>
+                <constraint firstItem="clZ-xB-rnK" firstAttribute="leading" secondItem="jQu-VC-Qvf" secondAttribute="trailing" constant="10" id="wcG-nv-5Ja"/>
+                <constraint firstItem="FTl-rO-A1R" firstAttribute="leading" secondItem="clZ-xB-rnK" secondAttribute="trailing" constant="10" id="x0Y-um-zzl"/>
+            </constraints>
+            <connections>
+                <outlet property="dayFive" destination="clZ-xB-rnK" id="880-Cu-ONE"/>
+                <outlet property="dayFour" destination="jQu-VC-Qvf" id="Tgs-Vd-8vU"/>
+                <outlet property="dayOne" destination="jbD-US-oU4" id="Na5-gu-av3"/>
+                <outlet property="daySeven" destination="7xX-tU-Q9x" id="oNX-TD-BKu"/>
+                <outlet property="daySix" destination="FTl-rO-A1R" id="kbN-C8-4MQ"/>
+                <outlet property="dayThree" destination="eg5-9X-ejk" id="rLg-Yk-w6V"/>
+                <outlet property="dayTwo" destination="pck-eg-V4B" id="4Ia-Ee-PcF"/>
+                <outlet property="monthLabel" destination="FT0-bS-3df" id="nza-XR-SBo"/>
+            </connections>
+        </collectionReusableView>
+    </objects>
+</document>

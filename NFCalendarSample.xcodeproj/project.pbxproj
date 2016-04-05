@@ -14,6 +14,12 @@
 		090C63BB1CA54C6D005BC5F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 090C63B91CA54C6D005BC5F7 /* LaunchScreen.storyboard */; };
 		090C63C61CA54C6D005BC5F7 /* NFCalendarSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090C63C51CA54C6D005BC5F7 /* NFCalendarSampleTests.swift */; };
 		090C63D11CA54C6D005BC5F7 /* NFCalendarSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090C63D01CA54C6D005BC5F7 /* NFCalendarSampleUITests.swift */; };
+		090C63E41CA5DCFC005BC5F7 /* NFCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090C63E31CA5DCFC005BC5F7 /* NFCalendar.swift */; };
+		090C63E91CA674AB005BC5F7 /* NFCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090C63E71CA674AB005BC5F7 /* NFCalendarCell.swift */; };
+		090C63EA1CA674AB005BC5F7 /* NFCalendarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 090C63E81CA674AB005BC5F7 /* NFCalendarCell.xib */; };
+		090C63EF1CA72D56005BC5F7 /* NFCalendarHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090C63ED1CA72D56005BC5F7 /* NFCalendarHeader.swift */; };
+		090C63F01CA72D56005BC5F7 /* NFCalendarHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 090C63EE1CA72D56005BC5F7 /* NFCalendarHeader.xib */; };
+		092B5D5E1CB306880044F242 /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092B5D5D1CB306880044F242 /* NSDateExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,12 @@
 		090C63CC1CA54C6D005BC5F7 /* NFCalendarSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NFCalendarSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		090C63D01CA54C6D005BC5F7 /* NFCalendarSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCalendarSampleUITests.swift; sourceTree = "<group>"; };
 		090C63D21CA54C6D005BC5F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		090C63E31CA5DCFC005BC5F7 /* NFCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NFCalendar.swift; path = NFCalendar/NFCalendar.swift; sourceTree = "<group>"; };
+		090C63E71CA674AB005BC5F7 /* NFCalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NFCalendarCell.swift; path = NFCalendar/NFCalendarCell.swift; sourceTree = "<group>"; };
+		090C63E81CA674AB005BC5F7 /* NFCalendarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NFCalendarCell.xib; path = NFCalendar/NFCalendarCell.xib; sourceTree = "<group>"; };
+		090C63ED1CA72D56005BC5F7 /* NFCalendarHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NFCalendarHeader.swift; path = NFCalendar/NFCalendarHeader.swift; sourceTree = "<group>"; };
+		090C63EE1CA72D56005BC5F7 /* NFCalendarHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NFCalendarHeader.xib; path = NFCalendar/NFCalendarHeader.xib; sourceTree = "<group>"; };
+		092B5D5D1CB306880044F242 /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSDateExtensions.swift; path = NFCalendar/NSDateExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				090C63AF1CA54C6D005BC5F7 /* NFCalendarSample */,
+				090C63DE1CA54C74005BC5F7 /* NFCalendar */,
 				090C63C41CA54C6D005BC5F7 /* NFCalendarSampleTests */,
 				090C63CF1CA54C6D005BC5F7 /* NFCalendarSampleUITests */,
 				090C63AE1CA54C6D005BC5F7 /* Products */,
@@ -123,6 +136,19 @@
 				090C63D21CA54C6D005BC5F7 /* Info.plist */,
 			);
 			path = NFCalendarSampleUITests;
+			sourceTree = "<group>";
+		};
+		090C63DE1CA54C74005BC5F7 /* NFCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				092B5D5D1CB306880044F242 /* NSDateExtensions.swift */,
+				090C63E31CA5DCFC005BC5F7 /* NFCalendar.swift */,
+				090C63E71CA674AB005BC5F7 /* NFCalendarCell.swift */,
+				090C63E81CA674AB005BC5F7 /* NFCalendarCell.xib */,
+				090C63ED1CA72D56005BC5F7 /* NFCalendarHeader.swift */,
+				090C63EE1CA72D56005BC5F7 /* NFCalendarHeader.xib */,
+			);
+			name = NFCalendar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +256,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				090C63BB1CA54C6D005BC5F7 /* LaunchScreen.storyboard in Resources */,
+				090C63EA1CA674AB005BC5F7 /* NFCalendarCell.xib in Resources */,
+				090C63F01CA72D56005BC5F7 /* NFCalendarHeader.xib in Resources */,
 				090C63B81CA54C6D005BC5F7 /* Assets.xcassets in Resources */,
 				090C63B61CA54C6D005BC5F7 /* Main.storyboard in Resources */,
 			);
@@ -256,8 +284,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				090C63E41CA5DCFC005BC5F7 /* NFCalendar.swift in Sources */,
+				090C63E91CA674AB005BC5F7 /* NFCalendarCell.swift in Sources */,
+				092B5D5E1CB306880044F242 /* NSDateExtensions.swift in Sources */,
 				090C63B31CA54C6D005BC5F7 /* ViewController.swift in Sources */,
 				090C63B11CA54C6D005BC5F7 /* AppDelegate.swift in Sources */,
+				090C63EF1CA72D56005BC5F7 /* NFCalendarHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +435,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nfsw.NFCalendarSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -414,6 +447,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nfsw.NFCalendarSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -484,6 +518,7 @@
 				090C63D71CA54C6D005BC5F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		090C63D81CA54C6D005BC5F7 /* Build configuration list for PBXNativeTarget "NFCalendarSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +527,7 @@
 				090C63DA1CA54C6D005BC5F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		090C63DB1CA54C6D005BC5F7 /* Build configuration list for PBXNativeTarget "NFCalendarSampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +536,7 @@
 				090C63DD1CA54C6D005BC5F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
