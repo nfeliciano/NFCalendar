@@ -59,13 +59,12 @@ class NFCalendar: UIView, UICollectionViewDelegate, UICollectionViewDataSource, 
             // -1 to account for 'whichWeekday' being a nonZero number, and -1 to account for indexPath.row starting at 0
             cell.cellLabel.text = "\(lastMonth.numDaysInMonth()-(firstDay-2)+indexPath.row)"
             cell.cellLabel.textColor = UIColor.grayColor()
-            
-            //TODO: get number of days from last month
-        } else {
+        } else if (indexPath.row-firstDay+2 <= date.numDaysInMonth()) {
             cell.cellLabel.text = "\(indexPath.row-firstDay+2)"
+        } else {
+            cell.cellLabel.text = "\((indexPath.row-(firstDay-2)-date.numDaysInMonth()))"
+            cell.cellLabel.textColor = UIColor.grayColor()
         }
-        
-        //TODO: add in leftover days for next month
         return cell
     }
 
