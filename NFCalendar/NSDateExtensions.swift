@@ -34,7 +34,6 @@ extension NSDate {
     }
     
     func numCalendarSlotsInMonth() -> Int {
-        print("\(firstDayOfMonth().whichMonth())")
         return numDaysInMonth() + firstDayOfMonth().whichWeekday() - 1
     }
     
