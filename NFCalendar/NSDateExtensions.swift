@@ -9,7 +9,17 @@
 import Foundation
 
 extension NSDate {
-    // Get the number of days for the current month
+    
+    convenience init( year:Int, month:Int, day:Int) {
+        let calendar = NSCalendar.currentCalendar()
+        let dateComponent = NSDateComponents()
+        dateComponent.year = year
+        dateComponent.month = month
+        dateComponent.day = day
+        self.init(timeInterval:0, sinceDate:calendar.dateFromComponents(dateComponent)!)
+    }
+    
+    // Get the number of days for the month
     func numDaysInMonth() -> Int {
         let calendar = NSCalendar.currentCalendar()
         let days = calendar.rangeOfUnit(NSCalendarUnit.Day, inUnit: NSCalendarUnit.Month, forDate: self)
@@ -24,7 +34,26 @@ extension NSDate {
     }
     
     func numCalendarSlotsInMonth() -> Int {
+        print("\(firstDayOfMonth().whichMonth())")
         return numDaysInMonth() + firstDayOfMonth().whichWeekday() - 1
+    }
+    
+    func whichYear() -> Int {
+        let calendar = NSCalendar.currentCalendar()
+        let dateComponent = calendar.components(.Year, fromDate: self)
+        return dateComponent.year
+    }
+    
+    func whichMonth() -> Int {
+        let calendar = NSCalendar.currentCalendar()
+        let dateComponent = calendar.components(.Month, fromDate: self)
+        return dateComponent.month
+    }
+    
+    func whichDay() -> Int {
+        let calendar = NSCalendar.currentCalendar()
+        let dateComponent = calendar.components(.Day, fromDate: self)
+        return dateComponent.day
     }
     
     // Returns an int of which day of the week it is, 1 for Sunday
