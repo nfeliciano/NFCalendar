@@ -33,8 +33,18 @@ extension NSDate {
         return calendar.dateFromComponents(dateComponent)!
     }
     
+    // Returns the number of cells the calendar month needs
+    // In the very special case of non-leap Feburary (where the 1st is a Sunday), return 28
+    // Otherwise, return 35 or 42 depending on how the days fall in the calendar
     func numCalendarSlotsInMonth() -> Int {
-        return numDaysInMonth() + firstDayOfMonth().whichWeekday() - 1
+        let previous:Int = firstDayOfMonth().whichWeekday()-1
+        let current:Int = numDaysInMonth()
+        if (current + previous <= 28) {
+            return 28
+        }
+        else {
+            return (previous + current <= 35 ? 35 : 42)
+        }
     }
     
     func whichYear() -> Int {

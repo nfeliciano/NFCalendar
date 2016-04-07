@@ -48,23 +48,31 @@ class NFCalendar: UIView, UICollectionViewDelegate, UICollectionViewDataSource, 
         let cell:NFCalendarCell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! NFCalendarCell
         let date = NSDate()
         let firstDay = date.firstDayOfMonth().whichWeekday()
+        
+        // The last days of the month before
         if (indexPath.row < firstDay-1) {
             let lastMonth: NSDate!
             if (date.whichMonth() == 1) {
                 lastMonth = NSDate(year: date.whichYear()-1, month: 12, day: 1)
-            } else {
+            }
+            else {
                 lastMonth = NSDate(year: date.whichYear(), month: date.whichMonth()-1, day: 1)
             }
             
             // -1 to account for 'whichWeekday' being a nonZero number, and -1 to account for indexPath.row starting at 0
             cell.cellLabel.text = "\(lastMonth.numDaysInMonth()-(firstDay-2)+indexPath.row)"
             cell.cellLabel.textColor = UIColor.grayColor()
-        } else if (indexPath.row-firstDay+2 <= date.numDaysInMonth()) {
+        }
+        
+        else if (indexPath.row-firstDay+2 <= date.numDaysInMonth()) {
             cell.cellLabel.text = "\(indexPath.row-firstDay+2)"
-        } else {
+        }
+        // The first days of the month after
+        else {
             cell.cellLabel.text = "\((indexPath.row-(firstDay-2)-date.numDaysInMonth()))"
             cell.cellLabel.textColor = UIColor.grayColor()
         }
+        //TODO: clean this mess up
         return cell
     }
 
@@ -86,9 +94,11 @@ class NFCalendar: UIView, UICollectionViewDelegate, UICollectionViewDataSource, 
         var unitHeight:CGFloat = rect.height-60
         if (collectionView.numberOfItemsInSection(0) <= 28) {
             unitHeight = unitHeight / 5
-        } else if (collectionView.numberOfItemsInSection(0) <= 35) {
+        }
+        else if (collectionView.numberOfItemsInSection(0) <= 35) {
             unitHeight = unitHeight / 6
-        } else {
+        }
+        else {
             unitHeight = unitHeight / 8
         }
         return CGSizeMake(rect.width/7, unitHeight)
