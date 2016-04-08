@@ -72,6 +72,14 @@ extension NSDate {
         return dateComponent.weekday
     }
     
+    func monthName( abbrev:Bool ) -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = abbrev ? "MMM" : "MMMM"
+        let monthName:String = dateFormatter.stringFromDate(self)
+        return monthName
+    }
+    
+    // Not sure if we need this
     func weekdayNameFromDay( dayOfWeek:Int ) -> String {
         switch (dayOfWeek) {
             case 1:
@@ -93,10 +101,10 @@ extension NSDate {
         }
     }
     
-    func weekdayName( date:NSDate ) -> String {
+    func weekdayName( abbrev:Bool ) -> String {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "EEEE"
-        let dayName:String = dateFormatter.stringFromDate(date)
+        dateFormatter.dateFormat = abbrev ? "EEE" : "EEEE"
+        let dayName:String = dateFormatter.stringFromDate(self)
         return dayName
     }
 }
