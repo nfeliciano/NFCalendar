@@ -65,6 +65,28 @@ extension NSDate {
         return dateComponent.day
     }
     
+    func lastMonth() -> NSDate {
+        let lastMonth: NSDate!
+        if (self.whichMonth() == 1) {
+            lastMonth = NSDate(year: self.whichYear()-1, month: 12, day: 1)
+        }
+        else {
+            lastMonth = NSDate(year: self.whichYear(), month: self.whichMonth()-1, day: 1)
+        }
+        return lastMonth
+    }
+    
+    func nextMonth() -> NSDate {
+        let nextMonth: NSDate!
+        if (self.whichMonth() == 12) {
+            nextMonth = NSDate(year: self.whichYear()+1, month: 1, day: 1)
+        }
+        else {
+            nextMonth = NSDate(year: self.whichYear(), month: self.whichMonth()+1, day: 1)
+        }
+        return nextMonth
+    }
+    
     // Returns an int of which day of the week it is, 1 for Sunday
     func whichWeekday() -> Int {
         let calendar = NSCalendar.currentCalendar()

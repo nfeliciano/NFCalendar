@@ -8,15 +8,23 @@
 
 import UIKit
 
-class NFCalendar: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class NFCalendar: UIView, UIScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    let currentDate = NSDate(year: 2015, month: 12, day: 2)
+    let currentDate = NSDate()
     
     /*Initialization Classes
     */
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.addSubview(self.initializeCollectionView())
+        let scrollView = self.initializeScrollView()
+        self.addSubview(scrollView)
+        for page in 0...2 {
+            let collectionView : UICollectionView = self.initializeCollectionView()
+            collectionView.frame = CGRectMake(scrollView.bounds.size.width*CGFloat(page), collectionView.frame.origin.y, collectionView.frame.size.width, collectionView.frame.size.height)
+            collectionView.tag = page
+            scrollView.addSubview(collectionView)
+        }
+        scrollView.setContentOffset(CGPointMake(scrollView.bounds.size.width, 0), animated: false)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -27,28 +35,48 @@ class NFCalendar: UIView, UICollectionViewDelegate, UICollectionViewDataSource, 
         self.init(frame: CGRectZero)
     }
     
-    //TODO: add more convenience init classes
+    //TODO: add more convenience init classes?
+    
+    func initializeScrollView() -> UIScrollView {
+        let scrollView : UIScrollView = UIScrollView.init(frame: self.bounds)
+        scrollView.delegate = self
+        scrollView.contentSize = CGSizeMake(scrollView.frame.size.width*3, scrollView.frame.size.height)
+        scrollView.scrollEnabled = true
+        scrollView.pagingEnabled = true
+        scrollView.backgroundColor = UIColor.redColor()
+        return scrollView
+    }
     
     func initializeCollectionView() -> UICollectionView {
         let layout : UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         
-        let collectionView:UICollectionView = UICollectionView.init(frame: self.frame, collectionViewLayout: layout)
+        let collectionView : UICollectionView = UICollectionView.init(frame: self.frame, collectionViewLayout: layout)
         collectionView.registerNib(UINib(nibName: "NFCalendarCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
-//        collectionView.registerNib(UINib(nibName: "NFCalendarHeader", bundle: nil), forCellWithReuseIdentifier: "Header")
         collectionView.registerNib(UINib(nibName: "NFCalendarHeader", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "Header")
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = UIColor.orangeColor()
+        collectionView.scrollEnabled = false
         
         return collectionView
     }
     
     // MARK: UICollectionViewDelegate
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+    }
     
     // MARK: UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell:NFCalendarCell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! NFCalendarCell
-        let date = currentDate
+        
+        var date = currentDate
+        if (collectionView.tag == 0) {
+            date = date.lastMonth()
+        } else if (collectionView.tag == 2) {
+            date = date.nextMonth()
+        }
+        
         // -1 to account for 'whichWeekday' being a nonZero number, and -1 to account for indexPath.row starting at 0
         let firstDay = date.firstDayOfMonth().whichWeekday() - 2
         
@@ -65,7 +93,6 @@ class NFCalendar: UIView, UICollectionViewDelegate, UICollectionViewDataSource, 
             cell.cellLabel.text = "\(lastMonth.numDaysInMonth()-firstDay+indexPath.row)"
             cell.cellLabel.textColor = UIColor.grayColor()
         }
-        // Why +2?
         else if (indexPath.row <= date.numDaysInMonth() + firstDay) {
             cell.cellLabel.text = "\(indexPath.row-firstDay)"
         }
@@ -74,7 +101,6 @@ class NFCalendar: UIView, UICollectionViewDelegate, UICollectionViewDataSource, 
             cell.cellLabel.text = "\((indexPath.row-firstDay-date.numDaysInMonth()))"
             cell.cellLabel.textColor = UIColor.grayColor()
         }
-        //TODO: clean this mess up
         return cell
     }
 
@@ -84,7 +110,13 @@ class NFCalendar: UIView, UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         let header:NFCalendarHeader = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "Header", forIndexPath: indexPath) as! NFCalendarHeader
-        header.monthLabel.text = "\(currentDate.whichYear()) \(currentDate.monthName(false))"
+        var date = currentDate
+        if (collectionView.tag == 0) {
+            date = date.lastMonth()
+        } else if (collectionView.tag == 2) {
+            date = date.nextMonth()
+        }
+        header.monthLabel.text = "\(date.whichYear()) \(date.monthName(false))"
         return header
     }
     
